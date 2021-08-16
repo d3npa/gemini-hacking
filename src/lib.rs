@@ -9,11 +9,29 @@ type Result<T> = std::result::Result<T, Box<dyn Error>>;
 pub const MAX_HEADER_LENGTH: usize = 1026;
 
 pub mod response_codes {
-    pub const INPUT: usize = 10;
-    pub const INPUT_SENSITIVE: usize = 11;
-    pub const SUCCESS: usize = 20;
-    pub const REDIRECT_TEMPORARY: usize = 30;
-    pub const REDIRECT_PERMANENT: usize = 31;
+    pub const INPUT                         : usize = 10;
+    pub const SENSITIVE_INPUT               : usize = 11;
+
+    pub const SUCCESS                       : usize = 20;
+
+    pub const REDIRECT_TEMPORARY            : usize = 30;
+    pub const REDIRECT_PERMANENT            : usize = 31;
+
+    pub const TEMPORARY_FAILURE             : usize = 40;
+    pub const SERVER_UNAVAILABLE            : usize = 41;
+    pub const CGI_ERROR                     : usize = 42;
+    pub const PROXY_ERROR                   : usize = 43;
+    pub const SLOW_DOWN                     : usize = 44;
+
+    pub const PERMANENT_FAILURE             : usize = 50;
+    pub const NOT_FOUND                     : usize = 51;
+    pub const GONE                          : usize = 52;
+    pub const PROXY_REQUEST_REFUSED         : usize = 53;
+    pub const BAD_REQUEST                   : usize = 59;
+
+    pub const CLIENT_CERTIFICATE_REQUIRED   : usize = 60;
+    pub const CERTIFICATE_NOT_AUTHORIZED    : usize = 61;
+    pub const CERTIFICATE_NOT_VALID         : usize = 62;
 }
 
 const GEMINI_LOCALHOST: &str = "127.0.0.1:1965";
