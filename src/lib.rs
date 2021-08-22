@@ -3,8 +3,10 @@ use tokio_native_tls::native_tls;
 use tokio_native_tls::TlsAcceptor;
 use tokio::net::TcpListener;
 
-type Result<T> = std::result::Result<T, Box<dyn Error>>;
+pub use url;
+pub use urlencoding as ue;
 
+type Result<T> = std::result::Result<T, Box<dyn Error>>;
 
 pub const MAX_HEADER_LENGTH: usize = 1026;
 
